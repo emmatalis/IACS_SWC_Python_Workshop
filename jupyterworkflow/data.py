@@ -22,7 +22,12 @@ def get_fremont_data(filename = 'Fremont.csv', url = FREMONT_URL, force_download
     if force_download or not os.path.exists(filename):
         # download data from URL and call it Fremont.csv
         urlretrieve(url, filename)
-    data = pd.read_csv(filename, index_col = 'Date', parse_dates = True)
+    data = pd.read_csv(filename, index_col = 'Date')
+    try:
+        data.index = pd.to_datetime(data.index, format="%m%d%Y %H:%M:%S %p")
+    except (ValueError, TypeError):
+        data.index = pd.to_datetime(data.index)
     data.columns = ['East', 'West']
     data['Total'] = data['West'] + data['East']
     return data
+
