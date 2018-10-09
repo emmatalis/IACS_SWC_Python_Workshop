@@ -4,7 +4,7 @@ import pandas as pd
 
 FREMONT_URL='https://data.seattle.gov/api/views/65db-xm6k/rows.csv?accessType=DOWNLOAD'
 
-def get_fremont_data(filename = 'Fremonth.csv', url = FREMONT_URL, force_download = False):
+def get_fremont_data(filename = 'Fremont.csv', url = FREMONT_URL, force_download = False):
     """Download and cache Fremont bike data.
     
     Use pandas to fomat timestamps and add column labeling to return a 
