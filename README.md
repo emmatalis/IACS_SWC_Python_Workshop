@@ -1,4 +1,3 @@
-# testrepo
-This is a test repo
+# Repository for Software Carpentries Python Workshop
 
-This is a test repo for SWC Oct 8-9 2018.
+October 2018
